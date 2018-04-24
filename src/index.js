@@ -1,5 +1,6 @@
 import React from 'react';
-import
+import ReactDOM from 'react-dom'
+import { NavBar } from './NavBar.js'
 
 export default class Slider extends React.Component {
   constructor(props){
@@ -10,9 +11,17 @@ export default class Slider extends React.Component {
 
   render() {
     return(
-      <div className="slider">
+      <div>
+        <NavBar />
+        <div className="slider">
 
+        </div>
       </div>
     );
   }
 }
+
+ReactDOM.render(
+  <Slider />,
+  document.getElementById('app')
+);
