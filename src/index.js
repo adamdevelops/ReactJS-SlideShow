@@ -15,10 +15,25 @@ export default class Slider extends React.Component {
   }
 
   incrementSlideNum = () => {
-    console.log(this.state.slideNum);
     let slideNum = this.state.slideNum;
 
-    this.setState({ slideNum: slideNum + 1});
+    if (slideNum >= 5){
+      this.setState({ slideNum: 0});
+    }
+    else{
+      this.setState({ slideNum: slideNum + 1});
+    }
+  }
+
+  decrementSlideNum = () => {
+    let slideNum = this.state.slideNum;
+
+    if (slideNum <= 0){
+      this.setState({ slideNum: 5});
+    }
+    else {
+       this.setState({ slideNum: slideNum - 1});
+     }
   }
 
 
@@ -32,9 +47,9 @@ export default class Slider extends React.Component {
         <NavBar />
         <div className="slider">
           <h3>{slideNum}</h3>
-          <h3>Left</h3>
+          <h3 class="nav-menu" onClick={this.decrementSlideNum}>Left</h3>
           <img src={this.slides[slideNum]} />
-          <h3><a onClick={this.incrementSlideNum}>Right</a></h3>
+          <h3 class="nav-menu"><a onClick={this.incrementSlideNum}>Right</a></h3>
         </div>
       </div>
     );
