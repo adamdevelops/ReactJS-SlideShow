@@ -15,5 +15,39 @@ ol, ul {
 .slider{
   display: inline-block;
   margin: 10px;
+  transition: 2s;
+  text-align: center;
+  margin-left: 25%;
+  margin-right: 25%;
+}
 
+.slide2{
+  height: 450px ;
+  width: 640px;
+  text-align: center;
+
+}
+
+
+.slide-enter {
+  opacity: 0.01;
+  transform: translateX(100vw);
+
+}
+
+.slide-enter.slide-enter-active {
+  opacity: 1;
+  transition:  4000ms ease-out;
+  transform: translateX(0%);
+}
+
+.slide-leave {
+  opacity: 1;
+  transform: translateX(0%);
+}
+
+.slide-leave.slide-leave-active {
+  opacity: 0.01;
+  transition: 4000ms ease-out;
+  transform: translateX(-100vw);
 }
