@@ -7,11 +7,6 @@ import image from './img/image1.jpg';
 import image2 from './img/image-2.png';
 
 
-// const styles = {
-//   transition:'all 1s ease-in'
-// }
-
-
 export default class Slider extends React.Component {
   constructor(props){
     super(props);
@@ -64,8 +59,13 @@ export default class Slider extends React.Component {
         <div className="slider">
           <h3>Slider Num:{slideNum}</h3>
           <h3 class="nav-menu" onClick={this.decrementSlideNum}>Left</h3>
-          <img class="slider" src={this.slides[slideNum]} />
           <h3 class="nav-menu" onClick={this.incrementSlideNum}>Right</h3>
+          <ReactCSSTransitionGroup
+                transitionName = "slide"
+                transitionEnterTimeout = {4000}
+                transitionLeaveTimeout = {4000}>
+                <img src={this.slides[slideNum]} key={this.slides[slideNum]} class="slider" />
+          </ReactCSSTransitionGroup>
         </div>
         <div >
 
@@ -75,12 +75,7 @@ export default class Slider extends React.Component {
         <br />
         <br />
 
-          <ReactCSSTransitionGroup
-                transitionName = "slide"
-                transitionEnterTimeout = {2900}
-                transitionLeaveTimeout = {2900}>
-                <img src={this.slides[slideNum]} key={this.slides[slideNum]} class="slide2" align="middle"/>
-          </ReactCSSTransitionGroup>
+
         </div>
       </div>
     );

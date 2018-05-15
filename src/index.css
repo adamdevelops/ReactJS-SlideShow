@@ -17,13 +17,14 @@ ol, ul {
   margin: 10px;
   transition: 2s;
   text-align: center;
-  margin-left: 25%;
-  margin-right: 25%;
+  margin-left: 20%;
+  margin-right: 45%;
+  height: 450px;
+  width: 640px;
 }
 
 .slide2{
-  height: 450px ;
-  width: 640px;
+
   text-align: center;
 
 }
@@ -31,7 +32,7 @@ ol, ul {
 
 .slide-enter {
   opacity: 0.01;
-  transform: translateX(100vw);
+  transform: translateX(-100vw);
 
 }
 
@@ -49,5 +50,5 @@ ol, ul {
 .slide-leave.slide-leave-active {
   opacity: 0.01;
   transition: 4000ms ease-out;
-  transform: translateX(-100vw);
+  transform: translateX(100vw);
 }
