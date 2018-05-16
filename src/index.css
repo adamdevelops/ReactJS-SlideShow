@@ -13,14 +13,20 @@ ol, ul {
 }
 
 .slider{
-  display: inline-block;
+
   margin: 10px;
-  transition: 2s;
   text-align: center;
-  margin-left: 20%;
-  margin-right: 45%;
+
+}
+
+.center {
   height: 450px;
   width: 640px;
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -150px;
 }
 
 .slide2{

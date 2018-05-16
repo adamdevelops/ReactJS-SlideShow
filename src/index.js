@@ -49,34 +49,23 @@ export default class Slider extends React.Component {
   render() {
     this.slides = [ image, image2, image, image2, image, image2];  // add more pics to slider
     const slideNum = this.state.slideNum;
-    const img = '<img class="slide" style="" src={this.slides[slideNum]} />'
 
     return(
       <div>
         <NavBar />
-        <div>
-        </div>
+
         <div className="slider">
           <h3>Slider Num:{slideNum}</h3>
-          <h3 class="nav-menu" onClick={this.decrementSlideNum}>Left</h3>
-          <h3 class="nav-menu" onClick={this.incrementSlideNum}>Right</h3>
+          <h3 className="nav-menu" onClick={this.decrementSlideNum}>Left</h3>
+          <h3 className="nav-menu" onClick={this.incrementSlideNum}>Right</h3>
           <ReactCSSTransitionGroup
                 transitionName = "slide"
                 transitionEnterTimeout = {4000}
                 transitionLeaveTimeout = {4000}>
-                <img src={this.slides[slideNum]} key={this.slides[slideNum]} class="slider" />
+                <img src={this.slides[slideNum]} key={this.slides[slideNum]} className="center"   />
           </ReactCSSTransitionGroup>
         </div>
-        <div >
 
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-
-
-        </div>
       </div>
     );
   }
